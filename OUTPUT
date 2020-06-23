@@ -1,0 +1,68 @@
+[centos@ip-10-0-3-33 ~]$ docker run -d -p 8082:8080 --name web chandanarm/maven:latest
+0a83e42b4355841fefcb1bbb25e7e4ddf27f526f7aec12f56015d85f734e2f6a
+
+[centos@ip-10-0-3-33 ~]$ curl 18.222.145.245:8082/greeting
+Hello World
+--------------------------------------------------------------------------------
+kubernetes output
+
+master $ nano deploy.yml
+master $ kubectl create -f deploy.yml
+deployment.apps/webapp-deploy created
+
+master $ kubectl get deployment
+NAME            READY   UP-TO-DATE   AVAILABLE   AGE
+webapp-deploy   1/1     1            1           15s
+
+
+master $ nano svc.yml
+master $ kubectl create -f svc.yml
+service/webapp-svc created
+
+master $ kubectl get service
+NAME         TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP          18m
+webapp-svc   NodePort    10.105.66.215   <none>        8080:31000/TCP   6s
+
+master $ curl localhost:31000/greeting
+Hello World
+
+deploy.yml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deploy
+  labels:
+    app: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+        - name: webapp
+          image: chandanarm/maven:latest
+          ports:
+            - containerPort: 8080
+svc.yml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-svc
+  labels:
+    app: webapp
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    nodePort: 31000
+    targetPort: 8080
+  selector:
+    app: webapp
