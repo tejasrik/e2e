@@ -8,7 +8,7 @@ public class WelcomeController {
 	
 	@RequestMapping("/greeting")
 	public String greeting() {
-		return "Hello World";
+		return "Hello World:- This is an end to end pipeline";
 	}
 
 }
