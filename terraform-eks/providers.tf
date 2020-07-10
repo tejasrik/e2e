@@ -5,8 +5,6 @@
 provider "aws" {
   region  = "us-west-2"
   version = ">= 2.38.0"
-  access_key = "AKIAX67IWGRQPWNZBJAZ"
-  secret_key = "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"
 }
 
 # Using these data sources allows the configuration to be
