@@ -18,8 +18,6 @@ resource "aws_iam_role" "demo-node" {
     "Resource": "*"
   }
 
-  }
-}
 
 POLICY
 }
