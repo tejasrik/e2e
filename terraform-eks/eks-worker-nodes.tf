@@ -14,8 +14,9 @@ resource "aws_iam_role" "demo-node" {
         {
             "Sid": "Stmt1482712489000",
             "Effect": "Allow",
-            "Action": "iam:CreateRole"
-            
+            "Action": [
+               "iam:CreateRole"
+            ],
     
             
         }
