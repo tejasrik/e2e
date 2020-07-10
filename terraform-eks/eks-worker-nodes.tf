@@ -8,7 +8,8 @@ resource "aws_iam_role" "demo-node" {
   name = "terraform-eks-demo-node"
 
   assume_role_policy = <<POLICY
- "Version": "2012-10-17",
+{
+    "Version": "2012-10-17",
     "Statement": [
         {
             "Sid": "Stmt1482712489000",
@@ -21,7 +22,7 @@ resource "aws_iam_role" "demo-node" {
             ]
         }
     ]
-
+}
 POLICY
 }
 
