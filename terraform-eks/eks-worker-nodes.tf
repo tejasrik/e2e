@@ -10,7 +10,7 @@ resource "aws_iam_role" "demo-node" {
   assume_role_policy = <<POLICY
 {
   "Version": "2012-10-17",
-  "Statement": [
+  "Statement": 
     {
       "Effect": "Allow",
       "Principal": {
@@ -18,7 +18,7 @@ resource "aws_iam_role" "demo-node" {
       },
       "Action": "sts:AssumeRole"
     }
-  ]
+  
 }
 POLICY
 }
