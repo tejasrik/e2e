@@ -8,7 +8,7 @@ git 'https://github.com/tejasrik/End-to-end-pipeline.git'
 
 stage("Terraform init/plan/apply"){
 
-     withCredentials([string(credentialsId: 'aws-access-key', variable: 'AWS_ACCESS_KEY_ID'),
+     withCredentials([string(credentialsId: 'aws-access-id', variable: 'AWS_ACCESS_KEY_ID'),
                       string(credentialsId: 'aws-secret-key', variable: 'AWS_SECRET_ACCESS_KEY')])
     dir('./terraform-eks') {
      def tfHome = tool name: 'TF_PATH', type: 'terraform'
