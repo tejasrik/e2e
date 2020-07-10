@@ -10,15 +10,16 @@ resource "aws_iam_role" "demo-node" {
   assume_role_policy = <<POLICY
 {
   "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "Service": "ec2.amazonaws.com"
-      },
-      "Action":"iam:CreateRole"
-    }
-  ]
+    "Statement": [
+        {
+            "Sid": "Stmt1482712489000",
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateRole"
+            ],
+    
+            ]
+        }
 }
 POLICY
 }
