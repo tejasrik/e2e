@@ -1,3 +1,4 @@
+  
 #
 # EKS Worker Nodes Resources
 #  * IAM role allowing Kubernetes actions to access other AWS services
@@ -12,12 +13,11 @@ resource "aws_iam_role" "demo-node" {
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Effect": "ALLOw",
+      "Effect": "Allow",
       "Principal": {
         "Service": "ec2.amazonaws.com"
-          "Action":[ "sts:AssumeRole","iam:*"]
       },
-     
+      "Action": "sts:AssumeRole"
     }
   ]
 }
