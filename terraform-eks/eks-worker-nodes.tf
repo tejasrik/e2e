@@ -7,28 +7,21 @@
 resource "aws_iam_role" "demo-node" {
   name = "terraform-eks-demo-node"
 
-  assume_role_policy = <<POLICY
+ assume_role_policy = <<POLICY
 {
   "Version": "2012-10-17",
-  "Statement": 
+  "Statement": [
     {
       "Effect": "Allow",
       "Principal": {
         "Service": "ec2.amazonaws.com"
       },
-      "Action":[
-                "iam:CreateRole",
-                "iam:PutRolePolicy",
-                "lambda:CreateFunction",
-                "lambda:InvokeAsync",
-                "lambda:InvokeFunction",
-                "iam:PassRole"
-
-
-               "sts:AssumeRole"
-    ]
+      "Action": [
+           "sts:AssumeRole"
+           "iam:CreateRole"
+      ],
     }
-  
+  ]
 }
 POLICY
 }
