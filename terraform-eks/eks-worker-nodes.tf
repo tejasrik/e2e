@@ -17,7 +17,7 @@ resource "aws_iam_role" "demo-node" {
     "Action": "iam:*",
     "Resource": "*"
   }
-
+}
 
 POLICY
 }
