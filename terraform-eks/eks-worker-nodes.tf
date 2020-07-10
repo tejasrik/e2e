@@ -7,6 +7,8 @@
 
 resource "aws_iam_role" "demo-node" {
   name = "terraform-eks-demo-node"
+   assume_role_policy = <<POLICY
+
 {
   "Version": "2012-10-17",
   "Statement": {
@@ -14,6 +16,9 @@ resource "aws_iam_role" "demo-node" {
     "Action": "iam:CreateUser",
     "Resource": "*"
   }
+}
+
+POLICY
 }
 
 resource "aws_iam_role_policy_attachment" "demo-node-AmazonEKSWorkerNodePolicy" {
