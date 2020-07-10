@@ -3,10 +3,19 @@ stage('SCM Checkout')
 {
 git 'https://github.com/tejasrik/End-to-end-pipeline.git'
 }
-	
+stage("Terraform init/plan/apply"){
 	
 
-stage("Terraform init/plan/apply"){
+     withCredentials([string(credentialsId: 'aws-access-id', variable: 'AWS_ACCESS_KEY_ID'),
+		      string(credentialsId: 'aws-secret-key', variable: 'AWS_SECRET_ACCESS_KEY')]){
+   
+	sh "terraform destroy -auto-approve"
+     }
+}
+}
+
+/*stage("Terraform init/plan/apply"){
+	
 
      withCredentials([string(credentialsId: 'aws-access-id', variable: 'AWS_ACCESS_KEY_ID'),
 		      string(credentialsId: 'aws-secret-key', variable: 'AWS_SECRET_ACCESS_KEY')]){
@@ -44,4 +53,4 @@ stage("Terraform init/plan/apply"){
 }
 }
 }
-}
+}*/
