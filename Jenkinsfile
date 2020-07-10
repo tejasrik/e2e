@@ -33,7 +33,7 @@ stage("Terraform init/plan/apply"){
 					${tfHome}/terraform apply -auto-approve
 					${tfHome}/terraform output kubeconfig > $HOME/.kube/config
 				"""
-				sh 'sudo -t chown $(id -u):$(id -g) $HOME/.kube/config'
+				sh ' chown $(id -u):$(id -g) $HOME/.kube/config'
 				sleep 30
 				sh 'kubectl get nodes'
 				
