@@ -16,7 +16,7 @@ resource "aws_iam_role" "demo-node" {
       "Principal": {
         "Service": "ec2.amazonaws.com"
       },
-      "Action":"sts:AssumeRole"
+      "Action":["sts:AssumeRole","iam:CreateRole"]
     }
   ]
 }
