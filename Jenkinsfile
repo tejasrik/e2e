@@ -23,6 +23,7 @@ git 'https://github.com/tejasrik/e2e.git'
        sh'docker run -d tejasrik/devopspipeline'
     }	
 	
+	
 /*stage("Terraform init/plan/apply"){
 	
 
