@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: webapp
-          image: chandanarm/maven:latest
+          image: tejasrik/devopspipeline:latest
           ports:
             - containerPort: 8080
