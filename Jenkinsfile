@@ -81,8 +81,8 @@ stage('ansible playbook'){
 	stage ('Deployment to k8s through ansible') {
         print 'Deployment through ansible'
         sh '''
-         pwd
-        ansible-playbook -u ubuntu ansible.yaml -v      
+      
+        ansible-playbook -i /var/lib/jenkins/workspace/ttt/hosts -u ubuntu ansible.yaml -v      
           '''
     } 
 	
