@@ -82,7 +82,7 @@ stage('ansible playbook'){
         print 'Deployment through ansible'
         sh '''
          pwd
-        ansible-playbook -i /home/ubuntu/hosts -u ubuntu --private-key ~/.ssh/id_rsa ansible.yaml -v      
+        ansible-playbook -u ubuntu ansible.yaml -v      
           '''
     } 
 	
