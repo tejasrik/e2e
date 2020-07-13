@@ -75,3 +75,7 @@ stage("Terraform init/plan/apply"){
 }
 }
 }
+
+stage('ansible playbook'){
+	 ansiblePlaybook become: true, installation: 'ansible', inventory: 'hosts', playbook: 'ansible.yaml'
+}
