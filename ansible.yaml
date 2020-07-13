@@ -1,12 +1,17 @@
-
-- hosts: test
+- hosts: all
+  become: yes
+  become_user: ubuntu
   tasks:
-  - name: copy deployment file to kubernetes master 
-    copy:
-      src: deployment.yaml
-      dest: /home/ubuntu
-  - name: delete the previous of kubernetes objects 
-    command: kubectl delete -f /home/ubuntu/deployment.yaml
-  - name: Create a Deployment by reading the definition from a local file
-    command: kubectl apply -f /home/ubuntu/deployment.yaml
-      
+    - name: Run kubernetes deployment command.
+      command: kubectl apply --kubeconfig /home/ubuntu/kube.conf -f /home/ubuntu/deployment.yml
+      args:
+        chdir: /home/ubuntu
+    - name: Sleep 10 seconds
+      command:  sleep 10
+
+    - name: Display deployment details.
+      command: kubectl get deployments --kubeconfig /home/ubuntu/kube.conf
+   
+    - name: Display service details.
+      command: kubectl get svc --kubeconfig /home/ubuntu/kube.conf
+   
