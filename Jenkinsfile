@@ -79,3 +79,4 @@ git 'https://github.com/tejasrik/e2e.git'
 stage('ansible playbook'){  
 ansiblePlaybook become: true, becomeUser: 'ubuntu', installation: 'ansible', inventory: 'hosts', playbook: 'ansible.yaml'
 }
+}
