@@ -84,8 +84,6 @@ git 'https://github.com/tejasrik/e2e.git'
         sh '''
       scp -i "docker.pem" /home/ubuntu/.ssh/id_rsa ubuntu@3.226.243.233:~/.ssh/.
       ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i /home/ubuntu/hosts -u ubuntu --private-key=~/.ssh/id_rsa ansible.yaml      
-          '''
+          '''}
     } 
-
-
-
+				}				
