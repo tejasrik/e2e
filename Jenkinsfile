@@ -35,7 +35,7 @@ git 'https://github.com/tejasrik/e2e.git'
 }
 }*/
 
-stage("Terraform init/plan/apply"){
+/*stage("Terraform init/plan/apply"){
 	
 
      withCredentials([string(credentialsId: 'aws-access-id', variable: 'AWS_ACCESS_KEY_ID'),
@@ -74,7 +74,7 @@ stage("Terraform init/plan/apply"){
 }
 }
 }
-}
+}*/
 
 stage('ansible playbook'){
 	 ansiblePlaybook become: true, installation: 'ansible', inventory: 'hosts', playbook: 'ansible.yaml'
