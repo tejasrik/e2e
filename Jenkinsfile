@@ -87,10 +87,9 @@ git 'https://github.com/tejasrik/e2e.git'
 }*/
 	
 	 stage('Push k8s cluster') {
-        withCredentials([string(credentialsId: 'docker.pem', variable: 'docker.pem')]) {
             sh "scp -i "docker.pem" /home/ubuntu/.ssh/id_rsa ubuntu@hosts:~/.ssh/."
-        }
-        sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i /home/ubuntu/hosts -u ubuntu --private-key=~/.ssh/id_rsa ansible.yaml'
+        
+        sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook credentialsId: 'docker.pem' -i /home/ubuntu/hosts -u ubuntu --private-key=~/.ssh/id_rsa ansible.yaml'
         }
 }
    		
