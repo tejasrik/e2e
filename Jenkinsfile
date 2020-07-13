@@ -78,14 +78,13 @@ git 'https://github.com/tejasrik/e2e.git'
 
 stage('ansible playbook'){  
 
-	
 	stage ('Deployment to k8s through ansible') {
         print 'Deployment through ansible'
         sh '''
          pwd
-	 sleep 40
-        ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i /home/ubuntu/hosts -u ubuntu --private-key ~/.ssh/id_rsa ansible.yaml -v      
+        ansible-playbook -i /home/ubuntu/hosts -u ubuntu --private-key ~/.ssh/id_rsa ansible.yaml -v      
           '''
-    }
+    } 
+	
 }
 }
