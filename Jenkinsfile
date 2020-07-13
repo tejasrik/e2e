@@ -77,6 +77,10 @@ git 'https://github.com/tejasrik/e2e.git'
 }*/
 
 stage('ansible playbook'){  
-	 ansiblePlaybook become: true, becomeUser: 'ubuntu', installation: 'ansible', inventory: 'hosts', playbook: 'ansible.yaml'
+ print 'Deployment through ansible'
+        sh '''
+         pwd
+        ansible-playbook -i /home/ubuntu/hosts -u ubuntu --private-key ~/.ssh/id_rsa.pub ansibledeployment.yml -v      
+          '''	 
 }
 }
