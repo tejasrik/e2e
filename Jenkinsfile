@@ -77,12 +77,6 @@ git 'https://github.com/tejasrik/e2e.git'
 }*/
 
 stage('ansible playbook'){  
-	stage ('Deployment to k8s through ansible') {
-        print 'Deployment through ansible'
-        sh '''
-         pwd
-        ansible-playbook -i /home/ubuntu/hosts -u ubuntu --public-key ~/.ssh/id_rsa.pub ansible.yaml -v      
-          '''
-    }  
+	 ansiblePlaybook become: true, installation: 'ansible', inventory: 'hosts', playbook: 'ansible.yaml'
 }
 }
