@@ -79,11 +79,11 @@ git 'https://github.com/tejasrik/e2e.git'
 
 
 stage ('Deployment to k8s through ansible') {
-	withCredentials([string(credentialsId: 'docker.pem', variable: 'docker.pem')]{
+	
         sh '''
       scp -i "docker.pem" /home/ubuntu/.ssh/id_rsa ubuntu@3.226.243.233:~/.ssh/.
       ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i /home/ubuntu/hosts -u ubuntu --private-key=~/.ssh/id_rsa ansible.yaml      
-          '''}
+          '''
 			}
 			}
    		
