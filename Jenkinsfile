@@ -3,7 +3,7 @@ stage('SCM Checkout')
 {
 git 'https://github.com/tejasrik/e2e.git'
 }
- stage('Compile-Package'){
+ /*stage('Compile-Package'){
       // Get maven home path
      //def mvnHome =  tool name: 'maven3.6.3', type: 'maven' 
      //batlabel "${mvnHome}/bin/mvn package"
