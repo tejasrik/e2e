@@ -4,9 +4,9 @@
   - name: copy deployment file to kubernetes master 
     copy:
       src: deployment.yaml
-      dest: /home/
+      dest: /home/ubuntu
   - name: delete the previous of kubernetes objects 
-    command: kubectl delete -f /home/deployment.yaml
+    command: kubectl delete -f /home/ubuntu/deployment.yaml
   - name: Create a Deployment by reading the definition from a local file
-    command: kubectl apply -f /home/deployment.yaml
+    command: kubectl apply -f /home/ubuntu/deployment.yaml
       
