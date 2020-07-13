@@ -83,7 +83,7 @@ stage('ansible playbook'){
         print 'Deployment through ansible'
         sh '''
          pwd
-	 sleep =40
+	 sleep 40
         ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i /home/ubuntu/hosts -u ubuntu --private-key ~/.ssh/id_rsa ansible.yaml -v      
           '''
     }
