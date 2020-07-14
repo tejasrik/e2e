@@ -21,7 +21,7 @@ git 'https://github.com/tejasrik/e2e.git'
        sh 'docker login -u tejasrik -p Tejasri@6523'
        sh'docker push tejasrik/devopspipeline'
        sh'docker run -d tejasrik/devopspipeline'
-    }	
+    }	*/
 	
 	
 /*stage("Terraform init/plan/apply"){
@@ -29,13 +29,13 @@ git 'https://github.com/tejasrik/e2e.git'
 
      withCredentials([string(credentialsId: 'aws-access-id', variable: 'AWS_ACCESS_KEY_ID'),
 		      string(credentialsId: 'aws-secret-key', variable: 'AWS_SECRET_ACCESS_KEY')]){
-   
+    
 	sh "terraform destroy -auto-approve"
      }
 }
 }*/
 
-/*stage("Terraform init/plan/apply"){
+stage("Terraform init/plan/apply"){
 	
 
      withCredentials([string(credentialsId: 'aws-access-id', variable: 'AWS_ACCESS_KEY_ID'),
@@ -74,7 +74,7 @@ git 'https://github.com/tejasrik/e2e.git'
 }
 }
 }
-}*/
+}
 
 
 
