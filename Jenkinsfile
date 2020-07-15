@@ -33,7 +33,7 @@ stage("Terraform init/plan/apply"){
 	sh "terraform destroy -auto-approve"
      }
 }
-}
+
 
 /*stage("Terraform init/plan/apply"){
 	
