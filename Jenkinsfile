@@ -56,7 +56,7 @@ stage("Terraform init/plan/apply"){
 				"""
 				sh ' chown $(id -u):$(id -g) $HOME/.kube/config'
 				sleep 30
-	                        sh kubectl delete -f webapp-deploy
+	                        
 				sh 'kubectl get nodes'
 				
      //withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-cred', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
