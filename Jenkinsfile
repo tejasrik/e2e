@@ -35,7 +35,7 @@ stage("Terraform init/plan/apply"){
 }
 
 
-/*stage("Terraform init/plan/apply"){
+stage("Terraform init/plan/apply"){
 	
 
      withCredentials([string(credentialsId: 'aws-access-id', variable: 'AWS_ACCESS_KEY_ID'),
@@ -74,7 +74,7 @@ stage("Terraform init/plan/apply"){
   
 }
 }
-}*/
+}
 
 
 
