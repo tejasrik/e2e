@@ -26,14 +26,7 @@ git 'https://github.com/tejasrik/e2e.git'
         
     
         
-    // kubernetesDeploy(
-      //  configs: 'deployment.yml',
-        // kubeconfigId: 'KUBERNETES_CLUSTER_CONFIG',
-         //enableConfigSubstitution: true
-         //)
-        sh 'kubectl apply -f deployment.yaml'
-        
-    }
+    
            
 	
 	
