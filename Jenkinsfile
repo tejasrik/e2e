@@ -22,6 +22,19 @@ git 'https://github.com/tejasrik/e2e.git'
        sh'docker push tejasrik/devopspipeline'
        sh'docker run -d tejasrik/devopspipeline'
     }	
+	 stage('deploy application in k8s cluster'){
+        
+    
+        
+    // kubernetesDeploy(
+      //  configs: 'deployment.yml',
+        // kubeconfigId: 'KUBERNETES_CLUSTER_CONFIG',
+         //enableConfigSubstitution: true
+         //)
+        sh 'kubectl apply -f deployment.yml'
+        
+    }
+           
 	
 	
 stage("Terraform init/plan/apply"){
