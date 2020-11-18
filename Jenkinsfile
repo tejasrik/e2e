@@ -31,7 +31,7 @@ git 'https://github.com/tejasrik/e2e.git'
         // kubeconfigId: 'KUBERNETES_CLUSTER_CONFIG',
          //enableConfigSubstitution: true
          //)
-        sh 'kubectl apply -f deployment.yml'
+        sh 'kubectl apply -f deployment.yaml'
         
     }
            
