@@ -99,4 +99,5 @@ stage("Terraform init/plan/apply"){
         sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i /home/ubuntu/hosts -u ubuntu --private-key=~/.ssh/id_rsa ansible.yaml'
         }
 }
+}
    		
