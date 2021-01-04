@@ -11,7 +11,7 @@
 	<groupId>com.example.k8s</groupId>
 	<artifactId>springboot-kube</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-kubernetes</name>
+	<name>springboot-kube</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
